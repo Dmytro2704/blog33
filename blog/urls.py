@@ -1,0 +1,22 @@
+from django.urls import path
+from . import views
+from django.contrib.auth.views import LoginView, LogoutView
+
+urlpatterns=[
+    path("",views.index, name='index'),
+    path("post/<str:id>",views.post, name="post"),
+    path("about",views.about, name="about"),
+    path("contacts/",views.contacts, name="contacts"),
+    path("services",views.services, name="services"),
+    path('category/<str:name>',views.category, name="category"),
+    path('search',views.search, name='search'),
+    path('create',views.create, name='create'),
+    path('login', LoginView.as_view(), name='blog_login'),
+    path('logout', LogoutView.as_view(), name='blog_logout'),
+    path('sign_up',views.sign_up, name='sign_up'),
+    path('profile',views.profile, name='profile'),
+    path('update_profile',views.update_profile, name='update_profile'),
+    path('register_user',views.register_user, name='register_user')
+
+
+]

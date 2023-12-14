@@ -1,0 +1,17 @@
+{%extends 'blog/base.html' %}
+{%block content%}
+    <title>Profile</title>
+
+<h1>Information</h1>
+    <p>Name: {{ profile.login }}</p>
+    <p>Email: {{ profile.email }}</p>
+    <p>Poster</p>
+    <img src="{{ profile.poster.url }}" alt="Poster" width="100px">
+    <p>Date of Birth: {{ profile.date_of_birth }}</p>
+
+
+
+    <a href="{% url 'update_profile' %}">Change profile</a>
+<hr>
+
+{%endblock%}

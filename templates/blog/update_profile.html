@@ -1,0 +1,12 @@
+{%extends 'blog/base.html' %}
+{%block content%}
+    <title>Update profile</title>
+
+    <h1>Change profile</h1>
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.as_p }}
+
+        <button type="submit">Save</button>
+    </form>
+{%endblock%}

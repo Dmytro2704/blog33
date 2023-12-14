@@ -1,0 +1,13 @@
+{%extends 'blog/base.html' %}
+    {%block content%}
+
+                <h1>Gallery</h1>
+ <h2>Upload</h2>
+<form enctype="multipart/form-data" method="POST" action="{%url 'uploads'%}">
+   {%csrf_token%}
+    {{form.as_p}}
+    <button type="submit" class="btn btn-default" >Save</button>
+</form>
+
+<a href="{% url 'gallery' %}">Back to Gallery</a>
+{%endblock%}
